@@ -1,0 +1,12 @@
+NAME;CONDITIONAL;TYPE;VALUES_ARRAY
+algorithm;FALSE;c;(as,mmas,eas,ras,acs)
+localsearch;FALSE;c;(0,1,2,3)
+alpha;FALSE;r;(0.00,5.00)
+beta;FALSE;r;(0.00,10.00)
+rho;FALSE;r;(0.01,1.00)
+ants;FALSE;i;(5,100)
+q0;TRUE;r;(0.0,1.0)
+rasrank;TRUE;i;(1,100)
+elitistants;TRUE;i;(1,750)
+nnls;TRUE;i;(5,50)
+dlb;TRUE;c;(0,1)

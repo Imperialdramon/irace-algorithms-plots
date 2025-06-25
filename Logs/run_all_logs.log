@@ -1,0 +1,245 @@
+=== Run started at Fri Jun 20 19:20:22 -04 2025 ===
+=== Processing algorithm: ACOTSP ===
+>> Running for output: STN-i-E1-BL-WSR-2000-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E1-BL-WSR-2000/Result/STN-i-E1-BL-WSR-2000-L1.txt
+✅ Success: Generated STN-i-E1-BL-WSR-2000-L1.txt
+>> Running for output: STN-i-E1-BL-WSR-2000-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E1-BL-WSR-2000/Result/STN-i-E1-BL-WSR-2000-L2.txt
+✅ Success: Generated STN-i-E1-BL-WSR-2000-L2.txt
+>> Running for output: STN-i-E1-BL-WSR-2000-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E1-BL-WSR-2000/Result/STN-i-E1-BL-WSR-2000-L3.txt
+✅ Success: Generated STN-i-E1-BL-WSR-2000-L3.txt
+>> Running for output: STN-i-E2-BL-SR-2000-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E2-BL-SR-2000/Result/STN-i-E2-BL-SR-2000-L1.txt
+✅ Success: Generated STN-i-E2-BL-SR-2000-L1.txt
+>> Running for output: STN-i-E2-BL-SR-2000-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E2-BL-SR-2000/Result/STN-i-E2-BL-SR-2000-L2.txt
+✅ Success: Generated STN-i-E2-BL-SR-2000-L2.txt
+>> Running for output: STN-i-E2-BL-SR-2000-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E2-BL-SR-2000/Result/STN-i-E2-BL-SR-2000-L3.txt
+✅ Success: Generated STN-i-E2-BL-SR-2000-L3.txt
+>> Running for output: STN-i-E3-BH-WSR-2000-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E3-BH-WSR-2000/Result/STN-i-E3-BH-WSR-2000-L1.txt
+✅ Success: Generated STN-i-E3-BH-WSR-2000-L1.txt
+>> Running for output: STN-i-E3-BH-WSR-2000-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E3-BH-WSR-2000/Result/STN-i-E3-BH-WSR-2000-L2.txt
+✅ Success: Generated STN-i-E3-BH-WSR-2000-L2.txt
+>> Running for output: STN-i-E3-BH-WSR-2000-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E3-BH-WSR-2000/Result/STN-i-E3-BH-WSR-2000-L3.txt
+✅ Success: Generated STN-i-E3-BH-WSR-2000-L3.txt
+>> Running for output: STN-i-E4-BH-SR-2000-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E4-BH-SR-2000/Result/STN-i-E4-BH-SR-2000-L1.txt
+✅ Success: Generated STN-i-E4-BH-SR-2000-L1.txt
+>> Running for output: STN-i-E4-BH-SR-2000-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E4-BH-SR-2000/Result/STN-i-E4-BH-SR-2000-L2.txt
+✅ Success: Generated STN-i-E4-BH-SR-2000-L2.txt
+>> Running for output: STN-i-E4-BH-SR-2000-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/ACOTSP/E4-BH-SR-2000/Result/STN-i-E4-BH-SR-2000-L3.txt
+✅ Success: Generated STN-i-E4-BH-SR-2000-L3.txt
+=== Processing algorithm: PSO-X ===
+>> Running for output: STN-i-E1-BL-WSR-Mix-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E1-BL-WSR-Mix/Result/STN-i-E1-BL-WSR-Mix-L1.txt
+✅ Success: Generated STN-i-E1-BL-WSR-Mix-L1.txt
+>> Running for output: STN-i-E1-BL-WSR-Mix-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E1-BL-WSR-Mix/Result/STN-i-E1-BL-WSR-Mix-L2.txt
+✅ Success: Generated STN-i-E1-BL-WSR-Mix-L2.txt
+>> Running for output: STN-i-E1-BL-WSR-Mix-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E1-BL-WSR-Mix/Result/STN-i-E1-BL-WSR-Mix-L3.txt
+✅ Success: Generated STN-i-E1-BL-WSR-Mix-L3.txt
+>> Running for output: STN-i-E2-BL-SR-Mix-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E2-BL-SR-Mix/Result/STN-i-E2-BL-SR-Mix-L1.txt
+✅ Success: Generated STN-i-E2-BL-SR-Mix-L1.txt
+>> Running for output: STN-i-E2-BL-SR-Mix-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E2-BL-SR-Mix/Result/STN-i-E2-BL-SR-Mix-L2.txt
+✅ Success: Generated STN-i-E2-BL-SR-Mix-L2.txt
+>> Running for output: STN-i-E2-BL-SR-Mix-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E2-BL-SR-Mix/Result/STN-i-E2-BL-SR-Mix-L3.txt
+✅ Success: Generated STN-i-E2-BL-SR-Mix-L3.txt
+>> Running for output: STN-i-E3-BH-WSR-Mix-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E3-BH-WSR-Mix/Result/STN-i-E3-BH-WSR-Mix-L1.txt
+✅ Success: Generated STN-i-E3-BH-WSR-Mix-L1.txt
+>> Running for output: STN-i-E3-BH-WSR-Mix-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E3-BH-WSR-Mix/Result/STN-i-E3-BH-WSR-Mix-L2.txt
+✅ Success: Generated STN-i-E3-BH-WSR-Mix-L2.txt
+>> Running for output: STN-i-E3-BH-WSR-Mix-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E3-BH-WSR-Mix/Result/STN-i-E3-BH-WSR-Mix-L3.txt
+✅ Success: Generated STN-i-E3-BH-WSR-Mix-L3.txt
+>> Running for output: STN-i-E4-BH-SR-Mix-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E4-BH-SR-Mix/Result/STN-i-E4-BH-SR-Mix-L1.txt
+✅ Success: Generated STN-i-E4-BH-SR-Mix-L1.txt
+>> Running for output: STN-i-E4-BH-SR-Mix-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E4-BH-SR-Mix/Result/STN-i-E4-BH-SR-Mix-L2.txt
+✅ Success: Generated STN-i-E4-BH-SR-Mix-L2.txt
+>> Running for output: STN-i-E4-BH-SR-Mix-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E4-BH-SR-Mix/Result/STN-i-E4-BH-SR-Mix-L3.txt
+✅ Success: Generated STN-i-E4-BH-SR-Mix-L3.txt
+>> Running for output: STN-i-E5-BL-WSR-Mul-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E5-BL-WSR-Mul/Result/STN-i-E5-BL-WSR-Mul-L1.txt
+✅ Success: Generated STN-i-E5-BL-WSR-Mul-L1.txt
+>> Running for output: STN-i-E5-BL-WSR-Mul-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E5-BL-WSR-Mul/Result/STN-i-E5-BL-WSR-Mul-L2.txt
+✅ Success: Generated STN-i-E5-BL-WSR-Mul-L2.txt
+>> Running for output: STN-i-E5-BL-WSR-Mul-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E5-BL-WSR-Mul/Result/STN-i-E5-BL-WSR-Mul-L3.txt
+✅ Success: Generated STN-i-E5-BL-WSR-Mul-L3.txt
+>> Running for output: STN-i-E6-BL-SR-Mul-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E6-BL-SR-Mul/Result/STN-i-E6-BL-SR-Mul-L1.txt
+✅ Success: Generated STN-i-E6-BL-SR-Mul-L1.txt
+>> Running for output: STN-i-E6-BL-SR-Mul-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E6-BL-SR-Mul/Result/STN-i-E6-BL-SR-Mul-L2.txt
+✅ Success: Generated STN-i-E6-BL-SR-Mul-L2.txt
+>> Running for output: STN-i-E6-BL-SR-Mul-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E6-BL-SR-Mul/Result/STN-i-E6-BL-SR-Mul-L3.txt
+✅ Success: Generated STN-i-E6-BL-SR-Mul-L3.txt
+>> Running for output: STN-i-E7-BH-WSR-Mul-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E7-BH-WSR-Mul/Result/STN-i-E7-BH-WSR-Mul-L1.txt
+✅ Success: Generated STN-i-E7-BH-WSR-Mul-L1.txt
+>> Running for output: STN-i-E7-BH-WSR-Mul-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E7-BH-WSR-Mul/Result/STN-i-E7-BH-WSR-Mul-L2.txt
+✅ Success: Generated STN-i-E7-BH-WSR-Mul-L2.txt
+>> Running for output: STN-i-E7-BH-WSR-Mul-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E7-BH-WSR-Mul/Result/STN-i-E7-BH-WSR-Mul-L3.txt
+✅ Success: Generated STN-i-E7-BH-WSR-Mul-L3.txt
+>> Running for output: STN-i-E8-BH-SR-Mul-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E8-BH-SR-Mul/Result/STN-i-E8-BH-SR-Mul-L1.txt
+✅ Success: Generated STN-i-E8-BH-SR-Mul-L1.txt
+>> Running for output: STN-i-E8-BH-SR-Mul-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E8-BH-SR-Mul/Result/STN-i-E8-BH-SR-Mul-L2.txt
+✅ Success: Generated STN-i-E8-BH-SR-Mul-L2.txt
+>> Running for output: STN-i-E8-BH-SR-Mul-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E8-BH-SR-Mul/Result/STN-i-E8-BH-SR-Mul-L3.txt
+✅ Success: Generated STN-i-E8-BH-SR-Mul-L3.txt
+>> Running for output: STN-i-E9-BL-WSR-Uni-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E9-BL-WSR-Uni/Result/STN-i-E9-BL-WSR-Uni-L1.txt
+✅ Success: Generated STN-i-E9-BL-WSR-Uni-L1.txt
+>> Running for output: STN-i-E9-BL-WSR-Uni-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E9-BL-WSR-Uni/Result/STN-i-E9-BL-WSR-Uni-L2.txt
+✅ Success: Generated STN-i-E9-BL-WSR-Uni-L2.txt
+>> Running for output: STN-i-E9-BL-WSR-Uni-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E9-BL-WSR-Uni/Result/STN-i-E9-BL-WSR-Uni-L3.txt
+✅ Success: Generated STN-i-E9-BL-WSR-Uni-L3.txt
+>> Running for output: STN-i-E10-BL-SR-Uni-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E10-BL-SR-Uni/Result/STN-i-E10-BL-SR-Uni-L1.txt
+✅ Success: Generated STN-i-E10-BL-SR-Uni-L1.txt
+>> Running for output: STN-i-E10-BL-SR-Uni-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E10-BL-SR-Uni/Result/STN-i-E10-BL-SR-Uni-L2.txt
+✅ Success: Generated STN-i-E10-BL-SR-Uni-L2.txt
+>> Running for output: STN-i-E10-BL-SR-Uni-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E10-BL-SR-Uni/Result/STN-i-E10-BL-SR-Uni-L3.txt
+✅ Success: Generated STN-i-E10-BL-SR-Uni-L3.txt
+>> Running for output: STN-i-E11-BH-WSR-Uni-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E11-BH-WSR-Uni/Result/STN-i-E11-BH-WSR-Uni-L1.txt
+✅ Success: Generated STN-i-E11-BH-WSR-Uni-L1.txt
+>> Running for output: STN-i-E11-BH-WSR-Uni-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E11-BH-WSR-Uni/Result/STN-i-E11-BH-WSR-Uni-L2.txt
+✅ Success: Generated STN-i-E11-BH-WSR-Uni-L2.txt
+>> Running for output: STN-i-E11-BH-WSR-Uni-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E11-BH-WSR-Uni/Result/STN-i-E11-BH-WSR-Uni-L3.txt
+✅ Success: Generated STN-i-E11-BH-WSR-Uni-L3.txt
+>> Running for output: STN-i-E12-BH-SR-Uni-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E12-BH-SR-Uni/Result/STN-i-E12-BH-SR-Uni-L1.txt
+✅ Success: Generated STN-i-E12-BH-SR-Uni-L1.txt
+>> Running for output: STN-i-E12-BH-SR-Uni-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E12-BH-SR-Uni/Result/STN-i-E12-BH-SR-Uni-L2.txt
+✅ Success: Generated STN-i-E12-BH-SR-Uni-L2.txt
+>> Running for output: STN-i-E12-BH-SR-Uni-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/PSO-X/E12-BH-SR-Uni/Result/STN-i-E12-BH-SR-Uni-L3.txt
+✅ Success: Generated STN-i-E12-BH-SR-Uni-L3.txt
+=== Processing algorithm: MMASQAP ===
+>> Running for output: STN-i-E1-BL-WSR-60-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E1-BL-WSR-60/Result/STN-i-E1-BL-WSR-60-L1.txt
+✅ Success: Generated STN-i-E1-BL-WSR-60-L1.txt
+>> Running for output: STN-i-E1-BL-WSR-60-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E1-BL-WSR-60/Result/STN-i-E1-BL-WSR-60-L2.txt
+✅ Success: Generated STN-i-E1-BL-WSR-60-L2.txt
+>> Running for output: STN-i-E1-BL-WSR-60-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E1-BL-WSR-60/Result/STN-i-E1-BL-WSR-60-L3.txt
+✅ Success: Generated STN-i-E1-BL-WSR-60-L3.txt
+>> Running for output: STN-i-E2-BL-SR-60-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E2-BL-SR-60/Result/STN-i-E2-BL-SR-60-L1.txt
+✅ Success: Generated STN-i-E2-BL-SR-60-L1.txt
+>> Running for output: STN-i-E2-BL-SR-60-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E2-BL-SR-60/Result/STN-i-E2-BL-SR-60-L2.txt
+✅ Success: Generated STN-i-E2-BL-SR-60-L2.txt
+>> Running for output: STN-i-E2-BL-SR-60-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E2-BL-SR-60/Result/STN-i-E2-BL-SR-60-L3.txt
+✅ Success: Generated STN-i-E2-BL-SR-60-L3.txt
+>> Running for output: STN-i-E3-BH-WSR-60-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E3-BH-WSR-60/Result/STN-i-E3-BH-WSR-60-L1.txt
+✅ Success: Generated STN-i-E3-BH-WSR-60-L1.txt
+>> Running for output: STN-i-E3-BH-WSR-60-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E3-BH-WSR-60/Result/STN-i-E3-BH-WSR-60-L2.txt
+✅ Success: Generated STN-i-E3-BH-WSR-60-L2.txt
+>> Running for output: STN-i-E3-BH-WSR-60-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E3-BH-WSR-60/Result/STN-i-E3-BH-WSR-60-L3.txt
+✅ Success: Generated STN-i-E3-BH-WSR-60-L3.txt
+>> Running for output: STN-i-E4-BH-SR-60-L1.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E4-BH-SR-60/Result/STN-i-E4-BH-SR-60-L1.txt
+✅ Success: Generated STN-i-E4-BH-SR-60-L1.txt
+>> Running for output: STN-i-E4-BH-SR-60-L2.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E4-BH-SR-60/Result/STN-i-E4-BH-SR-60-L2.txt
+✅ Success: Generated STN-i-E4-BH-SR-60-L2.txt
+>> Running for output: STN-i-E4-BH-SR-60-L3.txt
+Processing 20 .Rdata files (runs)
+STN file successfully saved in: /home/imperialdramon/Tesis/irace-STN-R-version/Experiments/MMASQAP/E4-BH-SR-60/Result/STN-i-E4-BH-SR-60-L3.txt
+✅ Success: Generated STN-i-E4-BH-SR-60-L3.txt
+=== Run finished at Fri Jun 20 19:46:51 -04 2025 ===
