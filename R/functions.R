@@ -63,75 +63,67 @@ generate_irace_plots <- function(input_folder, parameters_file, output_folder, e
 
 # Función para graficar coordenadas paralelas
 plot_parallel_coordinates <- function(df, parameters_df, output_folder, escenario_name) {
+  if (!requireNamespace("MASS", quietly = TRUE)) {
+    stop("Instala el paquete MASS con install.packages('MASS')")
+  }
+
   exclude_cols <- c(".ID.", "Elite", "Run", "ConfigName")
-
-  defined_params <- parameters_df$NAME
-  candidate_cols <- intersect(names(df), defined_params)
-
-  parameter_cols <- candidate_cols[
-    !(candidate_cols %in% exclude_cols) &
-    sapply(df[candidate_cols], function(x) !all(is.na(x)))
+  defined <- intersect(names(df), parameters_df$NAME)
+  parameter_cols <- defined[
+    !(defined %in% exclude_cols) &
+    sapply(df[defined], function(x) !all(is.na(x)))
   ]
 
   if (length(parameter_cols) < 2) {
-    warning("No hay suficientes parámetros válidos para el gráfico de coordenadas paralelas.")
+    warning("No hay suficientes parámetros válidos para parcoord.")
     return(NULL)
   }
 
-  df_plot <- df[, c(parameter_cols, "Elite")]
-
-  # Convertir todo a numérico (incluso factores/categóricos)
-  df_plot[parameter_cols] <- lapply(parameter_cols, function(p) {
+  # Crear matrix numérico para parcoord
+  df_num <- df[parameter_cols]
+  for (p in parameter_cols) {
     tipo <- parameters_df$TYPE[parameters_df$NAME == p]
-    val <- df_plot[[p]]
-
+    val <- df_num[[p]]
     if (tipo %in% c("c", "o")) {
-      # Convertir factor con niveles ordenados
-      factor(val, levels = unique(val), ordered = TRUE) |> as.numeric()
+      df_num[[p]] <- as.numeric(factor(val, levels = unique(na.omit(val)), ordered = TRUE))
     } else if (tipo %in% c("i", "r")) {
-      as.numeric(as.character(val))
-    } else {
-      val  # dejarlo como está si no se reconoce tipo
+      df_num[[p]] <- as.numeric(as.character(val))
     }
-  })
+    # Los NA se mantienen, produciendo huecos en las líneas
+  }
 
-  # --- Gráfico todas las configuraciones ---
-  p_all <- GGally::ggparcoord(df_plot,
-                              columns = 1:length(parameter_cols),
-                              groupColumn = "Elite",
-                              scale = "globalminmax",
-                              alphaLines = 0.4,
-                              showPoints = FALSE) +
-    ggtitle(paste("ParCoord -", escenario_name)) +
-    theme_minimal() +
-    theme(
-      plot.title = element_text(hjust = 0.5, face = "bold"),
-      axis.text.x = element_text(angle = 45, hjust = 1)
-    )
+  # Colores suaves para élites / no élites
+  cols <- ifelse(df$Elite,
+                 grDevices::adjustcolor("#0072B2", alpha.f = 0.6),
+                 grDevices::adjustcolor("gray80", alpha.f = 0.3))
 
-  ggsave(file.path(output_folder, paste0("parallel_all_", escenario_name, ".pdf")),
-         p_all, width = 12, height = 6)
+  dir.create(output_folder, recursive = TRUE, showWarnings = FALSE)
 
-  # --- Gráfico solo élites ---
-  df_elite <- df_plot[df_plot$Elite, ]
-  if (nrow(df_elite) > 0) {
-    p_elite <- GGally::ggparcoord(df_elite,
-                                  columns = 1:length(parameter_cols),
-                                  groupColumn = "Elite",
-                                  scale = "globalminmax",
-                                  alphaLines = 0.4,
-                                  showPoints = FALSE) +
-      ggtitle(paste("ParCoord Elites -", escenario_name)) +
-      theme_minimal() +
-      theme(
-        plot.title = element_text(hjust = 0.5, face = "bold"),
-        axis.text.x = element_text(angle = 45, hjust = 1)
-      )
+  # Preparar rangos para asegurar visibilidad completa de los ejes
+  rngs <- apply(df_num, 2, function(v) range(v, na.rm = TRUE))
+  # parcoord rescalea internamente, pero dejamos rx por claridad
+  rx <- rngs
 
-    ggsave(file.path(output_folder, paste0("parallel_elites_", escenario_name, ".pdf")),
-           p_elite, width = 12, height = 6)
+  # — Gráfico completo —
+  grDevices::pdf(file.path(output_folder, paste0("parallel_all_", escenario_name, ".pdf")),
+                 width = 12, height = 6)
+  MASS::parcoord(df_num, col = cols, var.label = TRUE, lty = 1, rx = rx)
+  title(main = paste("ParCoord -", escenario_name))
+  grDevices::dev.off()
+
+  # — Gráfico solo élites —
+  elite_idx <- which(df$Elite)
+  if (length(elite_idx) > 0) {
+    grDevices::pdf(file.path(output_folder, paste0("parallel_elites_", escenario_name, ".pdf")),
+                   width = 12, height = 6)
+    MASS::parcoord(df_num[elite_idx, , drop = FALSE],
+                   col = cols[elite_idx],
+                   var.label = TRUE, lty = 1, rx = rx)
+    title(main = paste("ParCoord Elites -", escenario_name))
+    grDevices::dev.off()
   }
 }
+
 
 # Función para plotear histogramas
 plot_histograms <- function(df, parameters_df, output_folder, escenario_name, tag) {
@@ -143,7 +135,7 @@ plot_histograms <- function(df, parameters_df, output_folder, escenario_name, ta
 
     if (is_numeric) {
       hist_plot <- ggplot(df, aes_string(x = param)) +
-        geom_histogram(aes(y = ..count..), fill = "gray80", color = "gray30", bins = 30) +
+        geom_histogram(aes(y = after_stat(count)), fill = "gray80", color = "gray30", bins = 30) +
         ggtitle(param) +
         xlab("Values") + ylab(NULL) +
         theme_minimal() +
@@ -173,7 +165,7 @@ plot_histograms <- function(df, parameters_df, output_folder, escenario_name, ta
         geom_line(
           data = dens_df,
           aes(x = x, y = y),
-          color = "#0072B2", size = 1
+          color = "#0072B2", linewidth = 1
         ) +
         coord_cartesian(xlim = range(df[[param]], na.rm = TRUE)) +
         scale_y_continuous(

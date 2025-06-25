@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-required_packages <- c("irace", "ggplot2", "GGally", "dplyr")
+required_packages <- c("irace", "ggplot2", "GGally", "dplyr", "MASS", "tidyr")
 
 for (pkg in required_packages) {
   if (!requireNamespace(pkg, quietly = TRUE)) {
@@ -13,6 +13,8 @@ suppressPackageStartupMessages({
   library(ggplot2)
   library(GGally)
   library(dplyr)
+  library(MASS)
+  library(tidyr)
 })
 
 source("R/functions.R")
@@ -45,3 +47,8 @@ generate_irace_plots(
   output_folder = params$output,
   escenario_name = params$escenario_name
 )
+
+if (length(warnings()) > 0) {
+  cat("\n--- WARNINGS DETECTED ---\n")
+  print(warnings())
+}
