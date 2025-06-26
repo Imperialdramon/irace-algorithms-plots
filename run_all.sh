@@ -2,8 +2,9 @@
 
 # ==============================================================================
 # Script: run_all.sh
-# Description: Executes multiple Rscript calls to generate STN-i output files
-#              for various experiments and levels. Logs output to Logs/run_all_logs.log.
+# Description: Executes multiple Rscript calls to generate irace plots
+#              for all experiments in the Experiments folder. 
+#              Logs output to Logs/run_all_logs.log.
 #
 # Usage:
 #   1. Make the script executable:
@@ -14,7 +15,7 @@
 #
 #   Output:
 #     - A log file will be created or overwritten: Logs/run_all_logs.log
-#     - STN-i output files will be generated per experiment/level in their folders.
+#     - Plot files will be generated per experiment in their Result folders.
 # ==============================================================================
 
 # Optional: Exit immediately if a command exits with a non-zero status
@@ -31,20 +32,20 @@ echo "=== Run started at $(date) ===" > "$LOG_FILE"
 # Function to execute Rscript with logging
 run_rscript() {
   local args=("$@")
-  local last_output_file=""
+  local escenario_name=""
 
-  # Extract the output file name from the arguments
+  # Extract the escenario name from the arguments
   for arg in "${args[@]}"; do
-    [[ $arg == --output_file=* ]] && last_output_file="${arg#--output_file=}"
+    [[ $arg == --escenario_name=* ]] && escenario_name="${arg#--escenario_name=}"
   done
 
-  echo ">> Running for output: $last_output_file" | tee -a "$LOG_FILE"
+  echo ">> Running for escenario: $escenario_name" | tee -a "$LOG_FILE"
 
   # Execute Rscript and append output and errors to the log file
   if ! Rscript R/main.R "${args[@]}" >> "$LOG_FILE" 2>&1; then
-    echo "❌ Error: Failed to generate $last_output_file" | tee -a "$LOG_FILE"
+    echo "❌ Error: Failed to generate plots for $escenario_name" | tee -a "$LOG_FILE"
   else
-    echo "✅ Success: Generated $last_output_file" | tee -a "$LOG_FILE"
+    echo "✅ Success: Generated plots for $escenario_name" | tee -a "$LOG_FILE"
   fi
 }
 
@@ -54,24 +55,44 @@ experiments["ACOTSP"]="E1-BL-WSR-2000 E2-BL-SR-2000 E3-BH-WSR-2000 E4-BH-SR-2000
 experiments["MMASQAP"]="E1-BL-WSR-60 E2-BL-SR-60 E3-BH-WSR-60 E4-BH-SR-60"
 experiments["PSO-X"]="E1-BL-WSR-Mix E2-BL-SR-Mix E3-BH-WSR-Mix E4-BH-SR-Mix E5-BL-WSR-Mul E6-BL-SR-Mul E7-BH-WSR-Mul E8-BH-SR-Mul E9-BL-WSR-Uni E10-BL-SR-Uni E11-BH-WSR-Uni E12-BH-SR-Uni"
 
-# Parameter levels to be applied
-levels="L1 L2 L3"
-
 # Loop over all algorithms and their respective experiments
 for alg in "${!experiments[@]}"; do
   echo "=== Processing algorithm: $alg ===" | tee -a "$LOG_FILE"
 
   for exp in ${experiments[$alg]}; do
-    for lvl in $levels; do
-      run_rscript \
-        --input="Experiments/$alg/$exp/Data" \
-        --parameters="Experiments/$alg/Parameters/$lvl.csv" \
-        --output="Experiments/$alg/$exp/Result" \
-        --criteria=mean \
-        --significance=2 \
-        --output_file="STN-i-$exp-$lvl.txt"
-    done
+    # Check if the experiment directory exists
+    exp_dir="Experiments/$alg/$exp"
+    if [ ! -d "$exp_dir" ]; then
+      echo "⚠️  Warning: Directory $exp_dir does not exist, skipping..." | tee -a "$LOG_FILE"
+      continue
+    fi
+
+    # Check if Data directory exists
+    data_dir="$exp_dir/Data"
+    if [ ! -d "$data_dir" ]; then
+      echo "⚠️  Warning: Data directory $data_dir does not exist, skipping..." | tee -a "$LOG_FILE"
+      continue
+    fi
+
+    # Check if parameters file exists
+    params_file="Experiments/$alg/parameters.csv"
+    if [ ! -f "$params_file" ]; then
+      echo "⚠️  Warning: Parameters file $params_file does not exist, skipping..." | tee -a "$LOG_FILE"
+      continue
+    fi
+
+    # Ensure Result directory exists
+    result_dir="$exp_dir/Result"
+    mkdir -p "$result_dir"
+
+    # Run the Rscript for this experiment
+    run_rscript \
+      --input="$data_dir" \
+      --parameters="$params_file" \
+      --output="$result_dir" \
+      --escenario_name="$exp"
   done
 done
 
 echo "=== Run finished at $(date) ===" >> "$LOG_FILE"
+echo "🎉 All experiments processed! Check the log file: $LOG_FILE"
