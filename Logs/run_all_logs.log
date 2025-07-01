@@ -1,36 +1,45 @@
-=== Run started at Mon Jun 30 21:17:07 -04 2025 ===
+=== Run started at Mon Jun 30 21:28:22 -04 2025 ===
 === Processing algorithm: ACOTSP ===
 >> Running for escenario: E1-BL-WSR-2000
-
-Execution halted
-❌ Error: Failed to generate plots for E1-BL-WSR-2000
+✅ Success: Generated plots for E1-BL-WSR-2000
 >> Running for escenario: E2-BL-SR-2000
-
-Execution halted
-❌ Error: Failed to generate plots for E2-BL-SR-2000
+✅ Success: Generated plots for E2-BL-SR-2000
 >> Running for escenario: E3-BH-WSR-2000
-
-Execution halted
-❌ Error: Failed to generate plots for E3-BH-WSR-2000
+✅ Success: Generated plots for E3-BH-WSR-2000
 >> Running for escenario: E4-BH-SR-2000
-
-Execution halted
-❌ Error: Failed to generate plots for E4-BH-SR-2000
+✅ Success: Generated plots for E4-BH-SR-2000
 === Processing algorithm: PSO-X ===
 >> Running for escenario: E1-BL-WSR-Mix
-
-Execution halted
-❌ Error: Failed to generate plots for E1-BL-WSR-Mix
+✅ Success: Generated plots for E1-BL-WSR-Mix
 >> Running for escenario: E2-BL-SR-Mix
-
-Execution halted
-❌ Error: Failed to generate plots for E2-BL-SR-Mix
+✅ Success: Generated plots for E2-BL-SR-Mix
 >> Running for escenario: E3-BH-WSR-Mix
-
-Execution halted
-❌ Error: Failed to generate plots for E3-BH-WSR-Mix
+✅ Success: Generated plots for E3-BH-WSR-Mix
 >> Running for escenario: E4-BH-SR-Mix
-
-Execution halted
-❌ Error: Failed to generate plots for E4-BH-SR-Mix
+✅ Success: Generated plots for E4-BH-SR-Mix
 >> Running for escenario: E5-BL-WSR-Mul
+✅ Success: Generated plots for E5-BL-WSR-Mul
+>> Running for escenario: E6-BL-SR-Mul
+✅ Success: Generated plots for E6-BL-SR-Mul
+>> Running for escenario: E7-BH-WSR-Mul
+✅ Success: Generated plots for E7-BH-WSR-Mul
+>> Running for escenario: E8-BH-SR-Mul
+✅ Success: Generated plots for E8-BH-SR-Mul
+>> Running for escenario: E9-BL-WSR-Uni
+✅ Success: Generated plots for E9-BL-WSR-Uni
+>> Running for escenario: E10-BL-SR-Uni
+✅ Success: Generated plots for E10-BL-SR-Uni
+>> Running for escenario: E11-BH-WSR-Uni
+✅ Success: Generated plots for E11-BH-WSR-Uni
+>> Running for escenario: E12-BH-SR-Uni
+✅ Success: Generated plots for E12-BH-SR-Uni
+=== Processing algorithm: MMASQAP ===
+>> Running for escenario: E1-BL-WSR-60
+✅ Success: Generated plots for E1-BL-WSR-60
+>> Running for escenario: E2-BL-SR-60
+✅ Success: Generated plots for E2-BL-SR-60
+>> Running for escenario: E3-BH-WSR-60
+✅ Success: Generated plots for E3-BH-WSR-60
+>> Running for escenario: E4-BH-SR-60
+✅ Success: Generated plots for E4-BH-SR-60
+=== Run finished at Mon Jun 30 21:30:22 -04 2025 ===

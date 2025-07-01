@@ -179,16 +179,20 @@ plot_boxplots <- function(df, parameters_df, output_folder, escenario_name) {
       next
     }
 
+    df_filtered$EliteLabel <- factor(df_filtered$Elite,
+                                     levels = c(FALSE, TRUE),
+                                     labels = c("Regular", "Elite"))
+
     na_counts <- df %>%
       group_by(Elite) %>%
       summarise(na_count = sum(is.na(.data[[param]])), .groups = "drop")
 
-    p <- ggplot(df_filtered, aes(x = Elite, y = .data[[param]], fill = Elite)) +
-      geom_boxplot(outlier.color = "red", alpha = 0.7) +
-      scale_fill_manual(values = c("FALSE" = "#999999", "TRUE" = "#56B4E9"),
-                        labels = c("Regular", "Elite")) +
+    p <- ggplot(df_filtered, aes(x = EliteLabel, y = .data[[param]], fill = EliteLabel)) +
+      geom_boxplot(outlier.shape = 1, outlier.color = "black", width = 0.6, alpha = 0.8) +
+      scale_fill_manual(values = c("Regular" = "#999999", "Elite" = "#56B4E9")) +
       ggtitle(param) +
       xlab(NULL) + ylab("Value") +
+      guides(fill = "none") +
       theme_minimal(base_size = 9) +
       theme(
         plot.title = element_text(hjust = 0.5, face = "bold"),
@@ -196,11 +200,11 @@ plot_boxplots <- function(df, parameters_df, output_folder, escenario_name) {
         panel.border = element_rect(color = "black", fill = NA)
       ) +
       annotate("text",
-               x = 2.1, y = Inf,
+               x = 1, y = Inf,
                label = paste0("NA (Elite): ", na_counts$na_count[na_counts$Elite == TRUE],
                               "\nNA (Regular): ", na_counts$na_count[na_counts$Elite == FALSE]),
-               hjust = 1.1, vjust = 1.5,
-               size = 3, color = "darkred", fontface = "bold"
+               hjust = -0.1, vjust = 1.5,
+               size = 2.5, color = "darkred", fontface = "bold"
       )
 
     print(p)
