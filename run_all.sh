@@ -90,7 +90,8 @@ for alg in "${!experiments[@]}"; do
       --input="$data_dir" \
       --parameters="$params_file" \
       --output="$result_dir" \
-      --escenario_name="$exp"
+      --escenario_name="$exp" \
+      --global_folder="Resumen"
   done
 done
 

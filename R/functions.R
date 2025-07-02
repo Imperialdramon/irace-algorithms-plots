@@ -52,9 +52,11 @@ is_numeric_param <- function(param_name, parameters_df) {
 #'   Folder to save output plots (.png files).
 #' @param escenario_name `character(1)`\cr
 #'   Name of the tuning scenario, used in file naming.
+#' @param global_folder `character(1)`\cr
+#'   Path to a global folder for metrics (default: current directory).
 #'
 #' @export
-generate_irace_plots <- function(input_folder, parameters_file, output_folder, escenario_name) {
+generate_irace_plots <- function(input_folder, parameters_file, output_folder, escenario_name, global_folder = ".") {
   files <- list.files(input_folder, pattern = "\\.Rdata$", full.names = TRUE)
   param_list <- read_parameters_file(parameters_file)
   parameters <- param_list$params
@@ -88,8 +90,12 @@ generate_irace_plots <- function(input_folder, parameters_file, output_folder, e
 
   dir.create(output_folder, showWarnings = FALSE, recursive = TRUE)
 
-  plot_histograms(df, parameters, output_folder, escenario_name)
-  plot_boxplots(df, parameters, output_folder, escenario_name)
+  # Plot histograms and boxplots
+  #plot_histograms(df, parameters, output_folder, escenario_name)
+  #plot_boxplots(df, parameters, output_folder, escenario_name)
+
+  # Save the summary CSV
+  summarise_irace_softrestart(input_folder, file.path(global_folder, paste0("irace_summary", ".csv")))
 }
 
 #' Generate parameter histograms (Elite vs Regular).
@@ -210,6 +216,83 @@ plot_boxplots <- function(df, parameters_df, output_folder, escenario_name) {
     print(p)
     dev.off()
   }
+}
+
+#' Summarize softRestart usage, iteration stats, and config count across multiple .Rdata files.
+#'
+#' Aggregates results from all .Rdata files in a given folder into a single row,
+#' appending it to a cumulative summary CSV file.
+#'
+#' @param input_folder `character(1)`\cr Path to a folder containing multiple irace .Rdata result files.
+#' @param output_file `character(1)`\cr Path to the CSV file where the summary will be appended.
+#'
+#' @export
+summarise_irace_softrestart <- function(input_folder, output_file) {
+  files <- list.files(input_folder, pattern = "\\.Rdata$", full.names = TRUE)
+  if (length(files) == 0) stop("No .Rdata files found in: ", input_folder)
+
+  # Extract names from path (based on expected structure: algo/instance/scenario/Data)
+  path_parts <- strsplit(normalizePath(files[1]), .Platform$file.sep)[[1]]
+  n <- length(path_parts)
+  algorithm <- path_parts[n - 3]
+  scenario <- path_parts[n - 2]
+  instance <- path_parts[n - 1]
+
+  # Initialize accumulators
+  total_sr_ratio <- 0
+  all_iter_counts <- c()
+  total_config_count <- 0
+  num_files <- 0
+
+  for (file in files) {
+    load(file)
+    if (!exists("iraceResults")) next
+
+    num_files <- num_files + 1
+
+    # softRestart ratio
+    sr_vec <- iraceResults$softRestart
+    if (!is.null(sr_vec) && length(sr_vec) > 0) {
+      total_sr_ratio <- total_sr_ratio + sum(sr_vec, na.rm = TRUE) / length(sr_vec)
+    }
+
+    # iteration counts per raceData element
+    if (!is.null(iraceResults$raceData)) {
+      iter_counts <- length(iraceResults$raceData)
+      all_iter_counts <- c(all_iter_counts, iter_counts)
+    }
+
+    # configuration count
+    if (!is.null(iraceResults$experiments)) {
+      total_config_count <- total_config_count + ncol(iraceResults$experiments)
+    }
+  }
+
+  # Final metrics
+  sr_pct <- if (num_files > 0) round(total_sr_ratio / num_files, 3) else 0
+  iter_min <- if (length(all_iter_counts) > 0) min(all_iter_counts) else NA
+  iter_max <- if (length(all_iter_counts) > 0) max(all_iter_counts) else NA
+  iter_mean <- if (length(all_iter_counts) > 0) round(mean(all_iter_counts), 2) else NA
+
+  # Summary row
+  row <- data.frame(
+    Algorithm = algorithm,
+    Scenario = scenario,
+    Instance = instance,
+    Iter_Min = iter_min,
+    Iter_Max = iter_max,
+    Iter_Mean = iter_mean,
+    SoftRestart_Usage = sr_pct,
+    Config_Evaluated = total_config_count
+  )
+
+  # Append row to CSV
+  write.table(row,
+              file = output_file,
+              sep = ",",
+              row.names = FALSE,
+              col.names = !file.exists(output_file),
+              append = TRUE)
 }
 
 # nolint end

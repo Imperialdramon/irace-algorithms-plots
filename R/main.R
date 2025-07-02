@@ -23,6 +23,7 @@
 # --input          : (Required) Folder path containing irace execution outputs.
 # --parameters     : (Required) Path to the parameters file used by irace.
 # --output         : (Required) Path to the output folder for the generated plots.
+# --global_folder  : (Optional) Path to a global folder for metrics (default: current directory).
 # --escenario_name : (Required) Name of the scenario for labeling outputs.
 #
 # Requirements:
@@ -84,6 +85,7 @@ for (param_name in required_args) {
 input_folder <- normalizePath(params$input, mustWork = TRUE)
 parameters_file <- normalizePath(params$parameters, mustWork = TRUE)
 output_folder <- normalizePath(params$output, mustWork = FALSE)
+global_folder <- ifelse(is.null(params$global_folder), getwd(), normalizePath(params$global_folder, mustWork = FALSE))
 escenario_name <- params$escenario_name
 
 # Create output folder if it does not exist
@@ -97,7 +99,8 @@ generate_irace_plots(
   input_folder = input_folder,
   parameters_file = parameters_file,
   output_folder = output_folder,
-  escenario_name = escenario_name
+  escenario_name = escenario_name,
+  global_folder = global_folder
 )
 
 # ---------- Print warnings if any ----------
