@@ -269,10 +269,10 @@ summarise_irace_softrestart <- function(input_folder, output_file) {
   }
 
   # Final metrics
-  sr_pct <- if (num_files > 0) round(total_sr_ratio / num_files, 3) else 0
+  sr_pct <- if (num_files > 0) total_sr_ratio / num_files else 0
   iter_min <- if (length(all_iter_counts) > 0) min(all_iter_counts) else NA
   iter_max <- if (length(all_iter_counts) > 0) max(all_iter_counts) else NA
-  iter_mean <- if (length(all_iter_counts) > 0) round(mean(all_iter_counts), 2) else NA
+  iter_mean <- if (length(all_iter_counts) > 0) mean(all_iter_counts) else NA
 
   # Summary row
   row <- data.frame(

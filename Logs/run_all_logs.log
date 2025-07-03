@@ -1,4 +1,4 @@
-=== Run started at Tue Jul  1 19:17:00 -04 2025 ===
+=== Run started at Wed Jul  2 18:35:52 -04 2025 ===
 === Processing algorithm: ACOTSP ===
 >> Running for escenario: E1-BL-WSR-2000
 Warning message:
@@ -50,4 +50,4 @@ In write.table(row, file = output_file, sep = ",", row.names = FALSE,  ... :
 ✅ Success: Generated plots for E3-BH-WSR-60
 >> Running for escenario: E4-BH-SR-60
 ✅ Success: Generated plots for E4-BH-SR-60
-=== Run finished at Tue Jul  1 19:18:21 -04 2025 ===
+=== Run finished at Wed Jul  2 18:36:48 -04 2025 ===
